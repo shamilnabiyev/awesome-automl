@@ -4,16 +4,17 @@ Awesome AutoML is a curated list of automated machine learning libraries and too
 
 ## Comparison
 
-| Label   ||
-|--|--|
-|Supported| :heavy_check_mark: |
-| Not supported | :heavy_multiplication_x: |
-| Unknown | :grey_question: |
+|    | Supported| Not supported | Unknown |
+|--|--|--|--|
+| **Label** | :white_check_mark: | :heavy_minus_sign: | :grey_question: |
+
 
 |Name|Clasification| Regression | Clustering | Time series	| Image classification	| Object detection |	Raw data processing | Hyper parameter tuning | Model selection | Model Ensemble | Model Evaluation|
 |--|--|--|--|--|--|--|--|--|--|--|--|
-| [AutoGluon](https://github.com/awslabs/autogluon) | :heavy_check_mark:| :heavy_check_mark:| :heavy_multiplication_x: |:heavy_check_mark: |:heavy_check_mark: |:heavy_check_mark: |:heavy_check_mark: | :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark: |
-|	[TPOT](https://github.com/EpistasisLab/tpot)|	:heavy_check_mark:|	:heavy_check_mark:| :heavy_multiplication_x: | :heavy_multiplication_x: | :heavy_multiplication_x: | :heavy_multiplication_x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_multiplication_x: | :heavy_multiplication_x: |
-| [FEDOT](https://github.com/nccr-itmo/FEDOT) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :grey_question: | :grey_question: | :grey_question: | :grey_question: | :grey_question: | :grey_question: | :grey_question: |
+| [AutoGluon](https://github.com/awslabs/autogluon) | :white_check_mark:| :white_check_mark:| :heavy_minus_sign: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: | :white_check_mark:| :white_check_mark:| :white_check_mark:| :white_check_mark: |
+|	[TPOT](https://github.com/EpistasisLab/tpot)|	:white_check_mark:|	:white_check_mark:| :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :heavy_minus_sign: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :heavy_minus_sign: | :heavy_minus_sign: |
+| [FEDOT](https://github.com/nccr-itmo/FEDOT) | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :grey_question: | :grey_question: | :grey_question: | :grey_question: | :grey_question: | :grey_question: | :grey_question: |
+
+
 
 
