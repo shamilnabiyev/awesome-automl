@@ -33,7 +33,8 @@ jobs:
         with:
           csvinput: ${{ steps.csv.outputs.content }}
       - name: Create markdown file
-        run: echo ${{ steps.csvtableoutput.outputs.content }} >> sheet.md
+        # run: echo ${{ steps.csvtableoutput.outputs.content }} >> sheet.md
+        run: echo ${{ steps.csvtableoutput.outputs.content }}
       - name: List dir
         run: ls -l public/
       - uses: stefanzweifel/git-auto-commit-action@v4
