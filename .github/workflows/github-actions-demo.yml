@@ -27,14 +27,15 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: ./public/sheet.csv
-      - name: Convert to Markdown Table
-        uses: petems/csv-to-md-table-action@master
-        id: csvtableoutput
+      - name: CSV to Markdown
+        uses: petems/csv-to-markdown-action@master
+        id: csv-table-output
         with:
           csvinput: ${{ steps.csv.outputs.content }}
-      - name: Create markdown file
-        # run: echo ${{ steps.csvtableoutput.outputs.content }} >> sheet.md
-        run: echo ${{ steps.csvtableoutput['markdown-table']}}
-      - name: List dir
-        run: ls -l public/
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            ${{steps.csv-table-output.outputs.markdown-table}}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
+          allow-repeats: true
