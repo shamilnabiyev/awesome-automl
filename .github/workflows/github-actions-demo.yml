@@ -24,3 +24,4 @@ jobs:
         run: mv public/pub public/sheet.csv && ls -l public/
       - name: List dir
         run: ls -l
+      - uses: stefanzweifel/git-auto-commit-action@v4
