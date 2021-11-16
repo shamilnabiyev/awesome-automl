@@ -40,7 +40,8 @@ jobs:
         uses: varunsridharan/action-dynamic-readme@main
         with: 
           files: |
-            public/sheet.md
+            ./README.md
+            ./public/sheet.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit changes
