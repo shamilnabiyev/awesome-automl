@@ -6,17 +6,21 @@ jobs:
   download-csv-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Download the file
+      - name: List dir
+        run: ls -l
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: List dir
+        run: ls -l
+      - name: Download the csv file
         uses: suisei-cn/actions-download-file@v1
         id: downloadfile  # Remember to give an ID if you need the output filename
-        
         with:
           url: ${{ secrets.SHEET_URL }}
           target: public/
-      - run: mv public/pub public/sheet.csv
-      - run: ls -l public/
-      - run: pwd
-      - run: ls -l
-      
-      #- name: convert to csv
-      #  run: mv public/pub public/sheet.csv && ls -l public/
+      - name: List dir
+        run: ls -l
+      - name: Convert the file
+        run: mv public/pub public/sheet.csv && ls -l public/
+      - name: List dir
+        run: ls -l
