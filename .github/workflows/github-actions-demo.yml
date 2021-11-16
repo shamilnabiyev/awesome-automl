@@ -36,10 +36,5 @@ jobs:
         run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> public/sheet.md
       - name: List dir
         run: ls -l public/
-      - uses: mshick/add-pr-comment@v1
-        with:
-          message: |
-            ${{steps.csv-table-output.outputs.markdown-table}}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
-          allow-repeats: true
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
