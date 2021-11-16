@@ -36,5 +36,18 @@ jobs:
         run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> public/sheet.md
       - name: List dir
         run: ls -l public/
+        
+      - name: "Github Repository Metadata"
+        uses: varunsridharan/action-repository-meta@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Dynamic Template Render"
+        uses: varunsridharan/action-dynamic-readme@main
+        with: 
+          files: |
+            public/sheet.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
