@@ -13,5 +13,9 @@ jobs:
         with:
           url: ${{ secrets.SHEET_URL }}
           target: public/
-      - name: convert to csv
-        run: mv public/pub public/sheet.csv && ls -l public/
+      - run: mv public/pub public/sheet.csv
+      - run: ls -l public/
+      - run: pwd
+      
+      #- name: convert to csv
+      #  run: mv public/pub public/sheet.csv && ls -l public/
