@@ -32,8 +32,10 @@ jobs:
         id: csv-table-output
         with:
           csvinput: ${{ steps.csv.outputs.content }}
-      - name: MD output
-        run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> ./public/sheet.md
+      - name: Write markdown
+        run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> public/sheet.md
+      - name: List dir
+        run: ls -l public/
       - uses: mshick/add-pr-comment@v1
         with:
           message: |
