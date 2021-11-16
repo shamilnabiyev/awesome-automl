@@ -27,9 +27,17 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: ./public/sheet.csv
-      - name: CSV to Markdown Table
-        uses: petems/csv-to-md-table-action@v1.0.0
+      - name: Convert to Markdown Table
+        uses: petems/csv-to-md-table-action@master
         id: csv-table-output
         with:
           csvinput: ${{ steps.csv.outputs.content }}
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Add comment on Pull-request
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            CSV changes detected:
+            ${{steps.csv-table-output.outputs.markdown-table}}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
+          allow-repeats: true
