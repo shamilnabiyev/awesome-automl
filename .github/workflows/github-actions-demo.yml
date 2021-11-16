@@ -1,7 +1,7 @@
 name: Download CSV File
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   download-csv-file:
     runs-on: ubuntu-latest
