@@ -10,16 +10,14 @@ jobs:
         run: ls -l
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: List dir
-        run: ls -l
+      - name: Delete public dir
+        run: rm public
       - name: Download the csv file
         uses: suisei-cn/actions-download-file@v1
         id: downloadfile  # Remember to give an ID if you need the output filename
         with:
           url: ${{ secrets.SHEET_URL }}
           target: public/
-      - name: List dir
-        run: ls -l
       - name: Rename the file
         run: mv public/pub public/sheet.csv && ls -l public/
       - name: Read CSV
@@ -34,15 +32,14 @@ jobs:
           csvinput: ${{ steps.csv.outputs.content }}
       - name: Write markdown
         run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> public/sheet.md
-      - name: List dir
-        run: ls -l public/
       - name: "Dynamic Template Render"
         uses: varunsridharan/action-dynamic-readme@main
         with: 
           files: |
             ./README.md
-            ./public/sheet.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete public dir
+        run: rm public
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
