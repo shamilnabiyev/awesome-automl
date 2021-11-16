@@ -33,7 +33,7 @@ jobs:
         with:
           csvinput: ${{ steps.csv.outputs.content }}
       - name: MD output
-        run: echo ${{ steps.csv.outputs.markdown-table }}
+        run: echo "${{ steps.csv.outputs.markdown-table }}"
       - uses: mshick/add-pr-comment@v1
         with:
           message: |
