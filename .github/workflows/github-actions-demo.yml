@@ -10,8 +10,8 @@ jobs:
         run: ls -l
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Delete public dir
-        run: rm -r public
+      - name: Delete old md file
+        run: rm public/sheet.md
       - name: Download the csv file
         uses: suisei-cn/actions-download-file@v1
         id: downloadfile  # Remember to give an ID if you need the output filename
@@ -39,7 +39,7 @@ jobs:
             ./README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Delete public dir
-        run: rm -r public
+      - name: Delete old md file
+        run: rm public/sheet.md
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
