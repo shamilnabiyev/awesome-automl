@@ -6,12 +6,12 @@ jobs:
   download-csv-file:
     runs-on: ubuntu-latest
     steps:
-      - name: List dir
-        run: ls -l
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Delete old md file
         run: rm public/sheet.md
+      - name: List dir
+        run: ls -l public/
       - name: Download the csv file
         uses: suisei-cn/actions-download-file@v1
         id: downloadfile  # Remember to give an ID if you need the output filename
