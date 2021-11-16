@@ -11,7 +11,7 @@ jobs:
         id: downloadfile  # Remember to give an ID if you need the output filename
         
         with:
-          url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS86M3ph2VgiOvYdCnIB8lDFmTc_SnSQ6AOSMXGWdv6QTnnK_NDCeU0FE5qg_7B3wDNvctWVg6KecLF/pub?gid=0&single=true&output=csv"
+          url: ${{ secrets.SHEET_URL }}
           target: public/
       - name: convert to csv
         run: mv public/pub public/sheet.csv && ls -l public/
