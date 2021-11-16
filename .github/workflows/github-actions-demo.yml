@@ -29,11 +29,11 @@ jobs:
           path: ./public/sheet.csv
       - name: Convert to Markdown Table
         uses: petems/csv-to-md-table-action@master
-        id: csv-table-output
+        id: csvtableoutput
         with:
           csvinput: ${{ steps.csv.outputs.content }}
       - name: Create markdown file
-        run: echo ${{ steps.csv.outputs.content }} >> sheet.md
+        run: echo ${{ steps.csvtableoutput.outputs.content }} >> sheet.md
       - name: List dir
         run: ls -l public/
       - uses: stefanzweifel/git-auto-commit-action@v4
