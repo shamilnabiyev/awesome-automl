@@ -11,7 +11,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Delete public dir
-        run: rm public
+        run: rm -r public
       - name: Download the csv file
         uses: suisei-cn/actions-download-file@v1
         id: downloadfile  # Remember to give an ID if you need the output filename
@@ -40,6 +40,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Delete public dir
-        run: rm public
+        run: rm -r public
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
