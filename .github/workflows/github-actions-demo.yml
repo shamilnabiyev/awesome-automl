@@ -1,12 +1,18 @@
 name: Download CSV File
-on: [push]
+on:
+  push:
+    branches: [ main ]
 jobs:
   download-csv-file:
     runs-on: ubuntu-latest
     steps:
-      - uses: suisei-cn/actions-download-file@v1
+      - name: Download the file
+        uses: suisei-cn/actions-download-file@v1
         id: downloadfile  # Remember to give an ID if you need the output filename
-        name: Download the file
+        
         with:
           url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS86M3ph2VgiOvYdCnIB8lDFmTc_SnSQ6AOSMXGWdv6QTnnK_NDCeU0FE5qg_7B3wDNvctWVg6KecLF/pub?gid=0&single=true&output=csv"
           target: public/
+      - name: convert to csv
+        run: mv public/pub public/sheet.csv
+        run: ls -l public/
