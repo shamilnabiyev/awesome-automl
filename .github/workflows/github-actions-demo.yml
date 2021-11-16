@@ -27,8 +27,8 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: ./public/sheet.csv
-      #- name: Convert csv to markdown
-      - uses: petems/csv-to-markdown-action@master
+      - name: CSV to Markdown Table
+        uses: petems/csv-to-md-table-action@v1.0.0
         id: csv-table-output
         with:
           csvinput: ${{ steps.csv.outputs.content }}
