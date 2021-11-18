@@ -24,6 +24,9 @@ jobs:
       - name: Rename the downloaded file
         run: mv public/pub public/sheet.csv
         
+      - name: Create datetime.md
+        run: date >> public/datetime.md
+        
       - name: Read CSV
         id: csv
         uses: juliangruber/read-file-action@v1
