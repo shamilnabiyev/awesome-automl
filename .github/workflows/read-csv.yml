@@ -4,8 +4,7 @@ on:
     branches: [ master ]
 
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '00 21 * * *'
+    - cron:  '05 20 * * *' # Runs at 20:05 UTC every day
     
 jobs:
   download-csv-file:
