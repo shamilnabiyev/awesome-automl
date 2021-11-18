@@ -8,6 +8,14 @@ jobs:
     steps:
       - name: Checkout into repository
         uses: actions/checkout@master
+          with:
+            ref: "development"
+        
+      - name: List dir
+        run: ls -l
+      
+      - name: Remove template from the root dir
+        run: rm -f readme-template.md
         
       - name: List dir
         run: ls -l
@@ -41,7 +49,7 @@ jobs:
         run: scp templates/readme-template.md ./
         
       - name: List dir
-        run: ls -l public/
+        run: ls -l 
         
       - name: Dynamic Template Render
         uses: varunsridharan/action-dynamic-readme@main
@@ -50,5 +58,9 @@ jobs:
             ./readme-template.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Cat readme-template.md
+        run: cat at readme-template.md
+      
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
