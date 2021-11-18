@@ -53,14 +53,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Rename README to README1
-        run: mv README.md README1.md && ls -l
-        
+      - name: Delete README
+        run: rm README.md && ls -l
+            
       - name: Rename readme-template to README
-        run: mv readme-template.md README.md && ls -l 
-        
-      - name: Delete README1
-        run: rm README1.md && ls -l
+        run: mv readme-template.md README.md && ls -l
     
-      #- name: Commit changes
-      #  uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
