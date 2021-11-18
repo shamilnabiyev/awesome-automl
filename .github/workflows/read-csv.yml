@@ -10,15 +10,9 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: "master"
-     
-      - name: List dir
-        run: ls -l
-      
+         
       - name: Remove template from the root dir
         run: rm -f readme-template.md
-        
-      - name: List dir
-        run: ls -l
         
       - name: Download the csv file from google sheets url
         uses: suisei-cn/actions-download-file@v1
@@ -28,7 +22,7 @@ jobs:
           target: public/
 
       - name: Rename the downloaded file
-        run: mv public/pub public/sheet.csv && ls -l public/
+        run: mv public/pub public/sheet.csv
         
       - name: Read CSV
         id: csv
@@ -44,15 +38,9 @@ jobs:
         
       - name: Write markdown
         run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> public/sheet.md
-
-      - name: print public/sheet.md
-        run: cat public/sheet.md
         
       - name: Copy the readme-template.md to the root dir
         run: scp templates/readme-template.md ./
-        
-      - name: List dir
-        run: ls -l 
         
       - name: "Dynamic Template Render"
         uses: varunsridharan/action-dynamic-readme@main
@@ -61,9 +49,15 @@ jobs:
             ./readme-template.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: print readme-template.md
-        run: cat readme-template.md     
+      
+      - name: Rename README to README1
+        run: mv README.md README1.md
+        
+      - name: Rename readme-template to README
+        run: mv readme-template.md README.md     
+        
+      - name: Delete README1
+        run: rm README1.md
     
       #- name: Commit changes
       #  uses: stefanzweifel/git-auto-commit-action@v4
