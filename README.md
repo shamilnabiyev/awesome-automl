@@ -1,9 +1,9 @@
 # Awesome AutoML
 
 <p align="center">
-  <img src="auto-ml-process.png" />
-  <span>Source: https://heartbeat.comet.ml/automl-the-next-wave-of-machine-learning-5494baac615f</span>
+  <img src="templates/auto-ml-process.png" />
 </p>
+<p align="center">Source: https://heartbeat.comet.ml/automl-the-next-wave-of-machine-learning-5494baac615f</p>
 
 [![Commit Activity](https://shields.io/github/commit-activity/m/shamilnabiyev/awesome-automl)](https://github.com/shamilnabiyev/awesome-automl)
 [![Last Commit](https://shields.io/github/last-commit/shamilnabiyev/awesome-automl)](https://github.com/shamilnabiyev/awesome-automl)
@@ -32,4 +32,4 @@ Awesome AutoML is a curated list of automated machine learning libraries and too
 
 #### Latest update
 
-Updated on 18. November 2021 15:01:05 UTC
+Updated on 18. November 2021 15:04:15 UTC
