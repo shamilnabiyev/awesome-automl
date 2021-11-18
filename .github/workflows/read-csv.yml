@@ -4,7 +4,7 @@ on:
     branches: [ master ]
 
   schedule:
-    - cron:  '15 20 * * *' # Runs at 20:15 UTC every day
+    - cron:  '15 07 * * 1,2,3,4,5' # Runs at 20:15 UTC every day
     
 jobs:
   download-csv-file:
