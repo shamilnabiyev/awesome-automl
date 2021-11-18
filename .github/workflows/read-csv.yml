@@ -44,14 +44,17 @@ jobs:
         
       - name: Write markdown
         run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> public/sheet.md
-       
+
+      - name: print public/sheet.md
+        run: cat public/sheet.md
+        
       - name: Copy the readme-template.md to the root dir
         run: scp templates/readme-template.md ./
         
       - name: List dir
         run: ls -l 
         
-      - name: Dynamic Template Render
+      - name: "Dynamic Template Render"
         uses: varunsridharan/action-dynamic-readme@main
         with: 
           files: |
@@ -59,7 +62,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Cat readme-template.md
+      - name: print readme-template.md
         run: cat readme-template.md
       
       - name: Commit changes
