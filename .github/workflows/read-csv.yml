@@ -12,7 +12,7 @@ jobs:
           ref: "master"
          
       - name: Remove template from the root dir
-        run: rm -f readme-template.md
+        run: rm -f readme-template.md && ls -l
         
       - name: Download the csv file from google sheets url
         uses: suisei-cn/actions-download-file@v1
@@ -22,10 +22,10 @@ jobs:
           target: public/
 
       - name: Rename the downloaded file
-        run: mv public/pub public/sheet.csv
+        run: mv public/pub public/sheet.csv && ls -l public/
         
       - name: Create datetime.md
-        run: date >> public/datetime.md
+        run: date >> public/datetime.md && ls -l public/
         
       - name: Read CSV
         id: csv
@@ -40,10 +40,10 @@ jobs:
           csvinput: ${{ steps.csv.outputs.content }}
         
       - name: Write markdown
-        run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> public/sheet.md
+        run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> public/sheet.md && ls -l public/
         
       - name: Copy the readme-template.md to the root dir
-        run: scp templates/readme-template.md ./
+        run: scp templates/readme-template.md ./  && ls -l
         
       - name: "Dynamic Template Render"
         uses: varunsridharan/action-dynamic-readme@main
@@ -54,13 +54,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Rename README to README1
-        run: mv README.md README1.md
+        run: mv README.md README1.md && ls -l
         
       - name: Rename readme-template to README
-        run: mv readme-template.md README.md     
+        run: mv readme-template.md README.md && ls -l 
         
       - name: Delete README1
-        run: rm README1.md
+        run: rm README1.md && ls -l
     
       #- name: Commit changes
       #  uses: stefanzweifel/git-auto-commit-action@v4
