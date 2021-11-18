@@ -64,6 +64,9 @@ jobs:
           
       - name: print readme-template.md
         run: cat readme-template.md
+        
+      - name: chmod 664 COMMIT_EDITMSG 
+        run: chmod 664 .git/COMMIT_EDITMSG 
       
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
