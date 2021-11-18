@@ -10,7 +10,10 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: "master"
-        
+      
+      - name: chmod 664 .git/COMMIT_EDITMSG 
+        run: chmod 664 .git/COMMIT_EDITMSG 
+      
       - name: List dir
         run: ls -l
       
@@ -63,10 +66,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: print readme-template.md
-        run: cat readme-template.md
-        
-      - name: chmod 664 COMMIT_EDITMSG 
-        run: chmod 664 .git/COMMIT_EDITMSG 
-      
+        run: cat readme-template.md     
+    
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
