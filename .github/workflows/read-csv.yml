@@ -1,0 +1,69 @@
+name: Read CSV
+on:
+  push:
+    branches: [ development ]
+jobs:
+  download-csv-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout into repository
+        uses: actions/checkout@master
+        with:
+          ref: "development"
+        
+      - name: List dir
+        run: ls -l
+      
+      - name: Remove template from the root dir
+        run: rm -f readme-template.md
+        
+      - name: List dir
+        run: ls -l
+        
+      - name: Download the csv file from google sheets url
+        uses: suisei-cn/actions-download-file@v1
+        id: downloadfile  # Remember to give an ID if you need the output filename
+        with:
+          url: ${{ secrets.SHEET_URL }}
+          target: public/
+
+      - name: Rename the downloaded file
+        run: mv public/pub public/sheet.csv && ls -l public/
+        
+      - name: Read CSV
+        id: csv
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./public/sheet.csv
+        
+      - name: Convert CSV to Markdown
+        uses: petems/csv-to-md-table-action@master
+        id: csv-table-output
+        with:
+          csvinput: ${{ steps.csv.outputs.content }}
+        
+      - name: Write markdown
+        run: echo "${{steps.csv-table-output.outputs.markdown-table}}" >> public/sheet.md
+
+      - name: print public/sheet.md
+        run: cat public/sheet.md
+        
+      - name: Copy the readme-template.md to the root dir
+        run: scp templates/readme-template.md ./
+        
+      - name: List dir
+        run: ls -l 
+        
+      - name: "Dynamic Template Render"
+        uses: varunsridharan/action-dynamic-readme@main
+        with: 
+          files: |
+            ./readme-template.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: print readme-template.md
+        run: cat readme-template.md
+      
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
