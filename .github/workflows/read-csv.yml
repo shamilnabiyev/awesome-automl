@@ -2,6 +2,11 @@ name: Read CSV
 on:
   push:
     branches: [ master ]
+
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '00 21 * * *'
+    
 jobs:
   download-csv-file:
     runs-on: ubuntu-latest
