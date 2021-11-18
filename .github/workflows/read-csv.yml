@@ -11,8 +11,8 @@ jobs:
         with:
           ref: "master"
          
-      - name: Remove template from the root dir
-        run: rm -f readme-template.md && ls -l
+      - name: Remove README
+        run: rm README.md && ls -l
         
       - name: Download the csv file from google sheets url
         uses: suisei-cn/actions-download-file@v1
@@ -44,20 +44,17 @@ jobs:
         
       - name: Copy the readme-template.md to the root dir
         run: scp templates/readme-template.md ./  && ls -l
+      
+      - name: Rename readme-template to README
+        run: mv readme-template.md README.md && ls -l
         
       - name: "Dynamic Template Render"
         uses: varunsridharan/action-dynamic-readme@main
         with: 
           files: |
-            ./readme-template.md
+            ./README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Delete README
-        run: rm README.md && ls -l
-            
-      - name: Rename readme-template to README
-        run: mv readme-template.md README.md && ls -l
-    
+                  
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
