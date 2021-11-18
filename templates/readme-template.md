@@ -10,4 +10,4 @@ Awesome AutoML is a curated list of automated machine learning libraries and too
 | **Label** | :white_check_mark: | :heavy_minus_sign: | :grey_question: |
 
 
-<!-- include shamilnabiyev/awesome-automl/@development/public/sheet.md -->
+<!-- include public/sheet.md -->
