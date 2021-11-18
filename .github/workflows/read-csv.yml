@@ -1,7 +1,7 @@
 name: Read CSV
 on:
   push:
-    branches: [ development ]
+    branches: [ master ]
 jobs:
   download-csv-file:
     runs-on: ubuntu-latest
@@ -9,7 +9,7 @@ jobs:
       - name: Checkout into repository
         uses: actions/checkout@master
         with:
-          ref: "development"
+          ref: "master"
         
       - name: List dir
         run: ls -l
