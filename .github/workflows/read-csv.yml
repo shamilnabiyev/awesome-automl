@@ -6,10 +6,9 @@ jobs:
   download-csv-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout into repository
-        uses: actions/checkout@master
+      - uses: actions/checkout@master
           with:
-            ref: "development"
+            ref: 'development'
         
       - name: List dir
         run: ls -l
