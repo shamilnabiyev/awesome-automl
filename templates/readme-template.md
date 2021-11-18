@@ -1,7 +1,7 @@
 # Awesome AutoML
 
 <p align="center">
-  <img src="templates/auto-ml-process.png" />
+  <img src="templates/auto-ml-process.png" width="512" />
 </p>
 <p align="center">
 Source: 
