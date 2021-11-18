@@ -1,7 +1,7 @@
 # Awesome AutoML
 
 <p align="center">
-  <img src="templates/auto-ml-process.png" />
+  <img src="templates/auto-ml-process.png" width="512" />
 </p>
 <p align="center">
 Source: 
@@ -35,4 +35,5 @@ Awesome AutoML is a curated list of automated machine learning libraries and too
 
 #### Latest update
 
-Updated on 18. November 2021 15:12:21 UTC
+Updated on 18. November 2021 15:33:53 UTC
+
