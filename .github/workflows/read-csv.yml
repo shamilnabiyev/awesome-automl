@@ -25,7 +25,7 @@ jobs:
         run: mv public/pub public/sheet.csv && ls -l public/
         
       - name: Create datetime.md
-        run: date >> public/datetime.md && ls -l public/
+        run: date +"%d. %B %Y %X %Z" >> public/datetime.md && ls -l public/
         
       - name: Read CSV
         id: csv
