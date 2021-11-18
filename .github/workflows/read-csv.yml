@@ -10,10 +10,7 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: "master"
-      
-      - name: chmod 664 .git/COMMIT_EDITMSG 
-        run: chmod 664 .git/COMMIT_EDITMSG 
-      
+     
       - name: List dir
         run: ls -l
       
