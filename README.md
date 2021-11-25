@@ -37,5 +37,5 @@ Awesome AutoML is a curated list of automated machine learning libraries and too
 
 #### Latest update
 
-Updated on 24. November 2021 07:27:48 UTC
+Updated on 25. November 2021 07:27:54 UTC
 
