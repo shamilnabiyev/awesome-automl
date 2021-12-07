@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="templates/auto-ml-process.png" />
+  <img src="templates/auto-ml-process.png" width="512" />
 </p>
 <p align="center">
 Source: 
@@ -11,7 +11,7 @@ Source:
 [![Commit Activity](https://shields.io/github/commit-activity/m/shamilnabiyev/awesome-automl)](https://github.com/shamilnabiyev/awesome-automl)
 [![Last Commit](https://shields.io/github/last-commit/shamilnabiyev/awesome-automl)](https://github.com/shamilnabiyev/awesome-automl)
 
-Awesome AutoML is a curated list of automated machine learning libraries and tools. The idea was inspired by [hibayesian/awesome-automl-papers](https://github.com/hibayesian/awesome-automl-papers), [guan-yuan/awesome-AutoML-and-Lightweight-Models](https://github.com/guan-yuan/awesome-AutoML-and-Lightweight-Models), [windmaple/awesome-AutoML](https://github.com/windmaple/awesome-AutoML), [ChanChiChoi/awesome-automl](https://github.com/ChanChiChoi/awesome-automl) and other awesome repositories. 
+Awesome AutoML is a curated list of automated machine learning libraries and tools, inspired by [awesome-automl-papers](https://github.com/hibayesian/awesome-automl-papers), [awesome-AutoML-and-Lightweight-Models](https://github.com/guan-yuan/awesome-AutoML-and-Lightweight-Models), [awesome-AutoML](https://github.com/windmaple/awesome-AutoML), [awesome-automl](https://github.com/ChanChiChoi/awesome-automl) and other repositories. 
 
 ## Comparison
 

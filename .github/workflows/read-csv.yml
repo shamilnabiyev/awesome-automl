@@ -2,6 +2,10 @@ name: Read CSV
 on:
   push:
     branches: [ master ]
+
+  schedule:
+    - cron:  '15 07 * * 1,4' # Runs at 20:15 UTC on Mo and Th
+    
 jobs:
   download-csv-file:
     runs-on: ubuntu-latest
