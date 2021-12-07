@@ -1,5 +1,3 @@
-# Awesome AutoML
-
 <p align="center">
   <img src="templates/auto-ml-process.png" width="512" />
 </p>
@@ -7,6 +5,8 @@
 Source: 
   <a href="https://www.slideshare.net/AxeldeRomblay?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview" target="_blank">Axel de Romblay, 2019 MLBox 0.8.2</a>
 </p> 
+
+# Awesome AutoML
 
 [![Commit Activity](https://shields.io/github/commit-activity/m/shamilnabiyev/awesome-automl)](https://github.com/shamilnabiyev/awesome-automl)
 [![Last Commit](https://shields.io/github/last-commit/shamilnabiyev/awesome-automl)](https://github.com/shamilnabiyev/awesome-automl)
@@ -37,5 +37,5 @@ Awesome AutoML is a curated list of automated machine learning libraries and too
 
 #### Latest update
 
-Updated on 06. December 2021 07:28:14 UTC
+Updated on 07. December 2021 14:29:07 UTC
 
